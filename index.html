@@ -134,6 +134,21 @@ table.rec tr.cur td { background: rgba(255, 212, 90, 0.18); color: #ffd45a; font
 .chip b { color: var(--navy); }
 .comic { position: absolute; inset: 2.2% 3.5% 5.2%; display: flex; align-items: center; justify-content: center; }
 .comic img { max-width: 100%; max-height: 100%; object-fit: contain; border: 0.25cqw solid var(--paper-ink); border-radius: 0.8cqw; }
+.lk { position: absolute; inset: 4% 5.5% 5%; display: flex; flex-direction: column; gap: 1.3cqw; }
+.lk .lead { text-align: center; font-size: 2cqw; color: var(--paper-muted); margin: 0; }
+.lk .hub { align-self: center; text-align: center; background: var(--frame-fill); border: 0.35cqw solid var(--frame); border-radius: 2cqw; padding: 1cqw 3cqw; font-size: 2.2cqw; line-height: 1.6; max-width: 80%; }
+.lk .hub b { display: block; font-family: var(--font-head); color: var(--navy); font-size: 2.5cqw; }
+.lk .cards { display: grid; grid-template-columns: 1fr 1fr; gap: 1.3cqw; }
+.lk .card { background: #fff; border: 0.2cqw solid #d5e1ee; border-inline-start: 1.1cqw solid var(--c); border-radius: 1.4cqw; padding: 1.1cqw 1.6cqw; font-size: 2.05cqw; line-height: 1.6; }
+.lk .card.wide { grid-column: 1 / -1; }
+.lk .card h4 { margin: 0; font-family: var(--font-head); font-size: 2.5cqw; color: var(--c); }
+.lk .card .src { font-size: 1.75cqw; color: var(--paper-muted); }
+.lk .card .obj { display: inline-block; font-size: 1.75cqw; font-weight: 700; color: var(--c); border: 0.2cqw solid var(--c); border-radius: 3cqw; padding: 0 1.2cqw; margin-top: 0.4cqw; }
+.lk .card .how { margin-top: 0.5cqw; }
+.lk .card .how b { color: var(--navy); }
+.lk .go { margin-top: 0.7cqw; font: inherit; font-size: 1.9cqw; font-weight: 700; color: #fff; background: var(--c); border: 0; border-radius: 3cqw; padding: 0.4cqw 1.8cqw; }
+.lk .job { margin-top: auto; background: var(--navy); color: #fff; border-radius: 1.6cqw; padding: 1.2cqw 2cqw; font-size: 2.1cqw; line-height: 1.6; }
+.lk .job b { color: var(--glow); }
 .pfoot { position: absolute; inset: auto 5.5% 1.6%; display: flex; justify-content: space-between; font-size: 1.7cqw; color: var(--paper-muted); }
 /* model state switches */
 .pg:not([data-s="on"]) .c1-on, .pg[data-s="on"] .c1-off { display: none; }
@@ -606,8 +621,9 @@ button:disabled { opacity: 0.4; cursor: default; }
       DT(['مع حاجة أم سلمان', 'يحددون المشكلة', 'للمفتاح بالعصف الذهني', 'يبنون المصباح', 'يختبرونه ويحسّنونه']) +
       '<div class="chips"><span class="chip"><b>المهنة:</b> فني الكهرباء</span><span class="chip"><b>الرياضيات:</b> النقود، لا تزيد التكلفة على دينار</span><span class="chip"><b>الفنية:</b> قاعدة من الصلصال</span></div>' +
       '</div>' + foot(5) },
-    { t: 'paper', label: 'قصة المشكلة (1): مصباح أم سلمان (1 من 2)', html: '<div class="comic"><img src="img/comic-1.jpg" alt="قصة مصباح أم سلمان، الصفحة الأولى: العاصفة وانقطاع الكهرباء"></div>' + foot(6) },
-    { t: 'paper', label: 'قصة المشكلة (1): مصباح أم سلمان (2 من 2)', html: '<div class="comic"><img src="img/comic-2.jpg" alt="قصة مصباح أم سلمان، الصفحة الثانية: المشكلة وطلب علي من الأبطال"></div>' + foot(7) },
+    { t: 'paper', label: 'المشكلة (1): الربط عبر التخصصات', html: '<div class="lk"><div><div class="tagrow"><span class="tag t1 eq">المشكلة (1)</span><span class="tag t3 eq">الربط عبر التخصصات</span></div><h2 class="q">كيف تشارك المواد في صنع مصباح أم سلمان؟</h2></div><p class="lead">في المنتصف التصميم، وحوله ما يفعله التلميذ من كل مادة وهو يصمم.</p><div class="hub"><b>التصميم</b>مصباح بالبطارية من علبة كرتون، بمفتاح يغلق الدائرة ويفتحها</div><div class="cards"><div class="card" style="--c:#b4532f"><h4>التربية الفنية</h4><div class="src">الشكل الطيني المجسّم (ص. 99)</div><span class="obj">هدف نفس حركي</span><div class="how"><b>في التصميم: </b>يشكّل من الصلصال قاعدة ثابتة للمصباح حتى لا ينقلب بجانب سرير أم سلمان.</div></div><div class="card" style="--c:#23795a"><h4>اللغة العربية</h4><div class="src">مهارتا الاستماع والتحدث (ص. 79)</div><div class="how"><b>في التصميم: </b>يستمع إلى قصة «مصباح أم سلمان»، ويجيب عن أسئلة حول شخصياتها وأحداثها والأشياء الواردة فيها، ثم يتحدث عن المصباح الكهربائي بوصفه اختراعًا أفاد الناس.</div><button class="go" type="button" data-act="goto" data-to="قصة المشكلة (1)">اقرأ القصة في الصفحتين التاليتين ←</button></div><div class="card" style="--c:#2f62a8"><h4>الرياضيات</h4><div class="src">النقود (ص. 76–79)</div><div class="how"><b>في التصميم: </b>يعدّ قيم القطع النقدية اللازمة لشراء المواد عدًّا تصاعديًا، ويتحقق أن مجموعها لا يزيد على دينار.</div></div><div class="card" style="--c:#8a6512"><h4>التربية الإسلامية</h4><div class="src">الإحسان إلى الجيران (ص. 67–68)</div><div class="how"><b>في التصميم: </b>يكتب حديث «مَن كان يؤمن بالله واليوم الآخر فليُحسن إلى جاره» على بطاقة، ويلصقها على المصباح الذي يُهدى إلى أم سلمان.</div></div><div class="card wide" style="--c:#6a4c9c"><h4>التربية للمواطنة</h4><div class="src">مشروع «المصمم الصغير» (ص. 114–116)</div><div class="how"><b>في التصميم: </b>يصنع جسم المصباح من علبة كرتون مستعملة، واعيًا بمسؤوليته في المحافظة على الممتلكات.</div></div></div><div class="job"><b>المهنة: </b>فني الكهرباء، متخصص في تركيب الأسلاك، مهنة يرى التلميذ صاحبها في بيته؛ فيسمّيها، ويربطها بتوصيل الدائرة، ويشرح استعمال المفك.</div></div>' + foot(6) },
+    { t: 'paper', label: 'قصة المشكلة (1): مصباح أم سلمان (1 من 2)', html: '<div class="comic"><img src="img/comic-1.jpg" alt="قصة مصباح أم سلمان، الصفحة الأولى: العاصفة وانقطاع الكهرباء"></div>' + foot(7) },
+    { t: 'paper', label: 'قصة المشكلة (1): مصباح أم سلمان (2 من 2)', html: '<div class="comic"><img src="img/comic-2.jpg" alt="قصة مصباح أم سلمان، الصفحة الثانية: المشكلة وطلب علي من الأبطال"></div>' + foot(8) },
     { t: 'paper', label: 'المشكلة (2): بيت مريم بمفتاحين', attrs: { r1: 'on', r2: 'off' }, html:
       '<div class="wrap p2">' +
       '<div><div class="tagrow"><span class="tag t1 eq">المشكلة (2)</span><span class="tag t3 eq">من استنتاج الاستقصاء 1</span></div><h2 class="q">بيت مريم بمفتاحين</h2></div>' +
@@ -617,7 +633,8 @@ button:disabled { opacity: 0.4; cursor: default; }
       '<div class="sol"><span class="lbl">الحل بالكتابة: </span>يصمم التلاميذ نموذجًا لبيت من صندوق كرتون، لكل غرفة دائرة ببطاريتها ومصباحها ومفتاح يفتحها ويغلقها، مع مراعاة ألا يخفت ضوء أي غرفة (استنتاج الاستقصاء 1؛ د/ص. 103).</div>' +
       DT(['مع مريم وأختها', 'يحددون المشكلة', 'بالمقارنة والتمثيل بغرف منازلهم ومفاتيحها', 'يبنون غرفة', 'يختبرونها قبل الثانية']) +
       '<div class="chips"><span class="chip"><b>المهنة:</b> مهندس الكهرباء</span><span class="chip"><b>الرياضيات:</b> القياس والمساحة</span><span class="chip"><b>الإسلامية:</b> إطفاء غرفة النوم وقت النوم</span></div>' +
-      '</div>' + foot(8) },
+      '</div>' + foot(9) },
+    { t: 'paper', label: 'المشكلة (2): الربط عبر التخصصات', html: '<div class="lk"><div><div class="tagrow"><span class="tag t1 eq">المشكلة (2)</span><span class="tag t3 eq">الربط عبر التخصصات</span></div><h2 class="q">كيف تشارك المواد في بناء بيت مريم؟</h2></div><p class="lead">في المنتصف التصميم، وحوله ما يفعله التلميذ من كل مادة وهو يصمم.</p><div class="hub"><b>التصميم</b>بيت من صندوق كرتون، لكل غرفة دائرة ببطاريتها ومصباحها ومفتاحها</div><div class="cards"><div class="card" style="--c:#b4532f"><h4>التربية الفنية</h4><div class="src">الأعمال الورقية المجسّمة (ص. 83)</div><span class="obj">هدف نفس حركي</span><div class="how"><b>في التصميم: </b>يصنع أثاث الغرفتين والجدار الفاصل بينهما من الورق المقوى بأشكال مجسّمة.</div></div><div class="card" style="--c:#23795a"><h4>اللغة العربية</h4><div class="src">مهارة القراءة (ص. 86–91)</div><div class="how"><b>في التصميم: </b>يقرأ نص «المطعم الذكي»، ثم يصل بين كل مفتاح في بيت الدمى ومصباح الغرفة التي يضيئه، كما وصل بين الإنسان الآلي وعمله في النص (ص. 90).</div></div><div class="card" style="--c:#2f62a8"><h4>الرياضيات</h4><div class="src">استعمال مسطرة السنتمترات (ص. 100) · المساحة (ص. 106)</div><div class="how"><b>في التصميم: </b>يقيس أطوال الأسلاك والجدران، ويعدّ الوحدات المربعة في الأرضية ليقسمها غرفتين متساويتين.</div></div><div class="card" style="--c:#8a6512"><h4>التربية الإسلامية</h4><div class="src">آداب النوم والاستيقاظ (ص. 74–76)</div><div class="how"><b>في التصميم: </b>يلتزم بالنوم المبكر، فيطفئ إضاءة غرفة النوم في بيت الدمى ليلًا.</div></div><div class="card wide" style="--c:#6a4c9c"><h4>التربية للمواطنة</h4><div class="src">أحافظ على مرافق مدرستي (ص. 72–75)</div><div class="how"><b>في التصميم: </b>يحرص على ترشيد استهلاك الكهرباء، مقتديًا بهديل حين أخبرت مديرة المدرسة بمكيفات تعمل في صف فارغ.</div></div></div><div class="job"><b>المهنة: </b>مهندس الكهرباء، متخصص في تخطيط إنارة المباني، مهنة تمارسها النساء والرجال؛ يسمّيها التلميذ، ويربطها بتخطيط دائرة لكل غرفة، ويشرح استعمال مخطط البيت.</div></div>' + foot(10) },
     { t: 'paper', label: 'المشكلة (3): صنارة يوسف بلا مغناطيس', attrs: { q: '0', score: '0' }, html:
       '<div class="wrap p3">' +
       '<div><div class="tagrow"><span class="tag t1 eq">المشكلة (3)</span><span class="tag t3 eq">من استنتاج الاستقصاء 2</span></div><h2 class="q">صنارة يوسف بلا مغناطيس</h2></div>' +
@@ -627,7 +644,8 @@ button:disabled { opacity: 0.4; cursor: default; }
       '<div class="sol"><span class="lbl">الحل بالكتابة: </span>يصمم التلاميذ نموذجًا لصنارة من مسطرة بلاستيكية تُدلك بالصوف فتجذب أسماكًا من المناديل الورقية، مع مراعاة خفة الأسماك (استنتاج الاستقصاء 2).</div>' +
       DT(['مع رغبة يوسف في اللعب', 'يحددون المشكلة', 'بالتجربة والخطأ', 'يبنون الصنارة', 'بعدد مرات الدلك المستنتَج من الاستقصاء ٢']) +
       '<div class="chips"><span class="chip"><b>المهنة:</b> صانع الألعاب التعليمية</span><span class="chip"><b>الرياضيات:</b> جمع المئات</span><span class="chip"><b>الفنية:</b> قص الأسماك من المناديل الورقية وتلوينها</span></div>' +
-      '</div>' + foot(9) },
+      '</div>' + foot(11) },
+    { t: 'paper', label: 'المشكلة (3): الربط عبر التخصصات', html: '<div class="lk"><div><div class="tagrow"><span class="tag t1 eq">المشكلة (3)</span><span class="tag t3 eq">الربط عبر التخصصات</span></div><h2 class="q">كيف تشارك المواد في صنع لعبة يوسف؟</h2></div><p class="lead">في المنتصف التصميم، وحوله ما يفعله التلميذ من كل مادة وهو يصمم.</p><div class="hub"><b>التصميم</b>صنارة من مسطرة بلاستيكية تُدلك بالصوف فتجذب أسماكًا من المناديل الورقية</div><div class="cards"><div class="card" style="--c:#b4532f"><h4>التربية الفنية</h4><div class="src">الأعمال الورقية المسطّحة (ص. 71)</div><span class="obj">هدف نفس حركي</span><div class="how"><b>في التصميم: </b>يقص الأسماك من مناديل ورقية بلونين يدلّان على نقاطها.</div></div><div class="card" style="--c:#23795a"><h4>اللغة العربية</h4><div class="src">مهارة القراءة (ص. 93–98)</div><div class="how"><b>في التصميم: </b>يقرأ نص «اختراع ينير الطريق» عن لويس برايل، ثم يكمل جملة «أحبُّ أن أصبحَ مخترعًا؛ كي أخترعَ...» (ص. 98) بلعبة الصيد التي صمّمها.</div></div><div class="card" style="--c:#2f62a8"><h4>الرياضيات</h4><div class="src">جمع المئات (ص. 130)</div><div class="how"><b>في التصميم: </b>يحسب نقاط أسماكه (100 أو 200 لكل سمكة)، ويقارن مجموعه بمجموع إخوته.</div></div><div class="card" style="--c:#6a4c9c"><h4>التربية للمواطنة</h4><div class="src">أقدّر أسرتي (ص. 96–104)</div><div class="how"><b>في التصميم: </b>يعبّر عن تقديره لإخوته ويتعاون معهم، فيشاركهم لعبة الصيد بلا شجار.</div></div></div><div class="job"><b>المهنة: </b>صانع الألعاب التعليمية، متخصص في تصميمها، مهنة قريبة من اهتمام الطفل باللعب؛ يسمّيها التلميذ، ويربطها بتصميم الصنارة والأسماك، ويشرح استعمال المقص.</div></div>' + foot(12) },
     { t: 'back', label: 'الغلاف الخلفي' }
   ];
 
@@ -661,6 +679,13 @@ button:disabled { opacity: 0.4; cursor: default; }
   // ======================= model behaviour (delegated, so zoomed copies work too) =======================
   var RUB = { 5: [3, 3], 10: [6, 6], 20: [8, 7] };   // [charges shown, scraps lifted] – illustrative numbers
   var ACT = {
+    goto: function (root, b) {
+      var key = b.getAttribute('data-to'), i = -1;
+      PAGES.forEach(function (p, k) { if (i < 0 && p.label.indexOf(key) === 0) i = k; });
+      if (i < 0) return;
+      var z = document.getElementById('zoom'); if (z && !z.hidden) { z.hidden = true; document.getElementById('zbox').innerHTML = ''; }
+      toc.value = String(i); toc.dispatchEvent(new Event('change'));
+    },
     cp: function (root, b) {
       var panel = b.closest('.cpanel'), open = panel.getAttribute('data-c') === 'open';
       panel.setAttribute('data-c', open ? 'closed' : 'open');
