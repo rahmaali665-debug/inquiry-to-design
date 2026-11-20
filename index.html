@@ -165,7 +165,10 @@ table.rec tr.cur td { background: rgba(255, 212, 90, 0.18); color: #ffd45a; font
 /* navy pages */
 .pg.navy { color: #fff; }
 .txt { position: absolute; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 2cqw; }
-.txt.cover { inset: 37% 15% 19%; }
+.txt.cover { inset: 38% 15% 20.5%; gap: 1.4cqw; }
+.txt.cover .small { font-size: 2.35cqw; }
+.txt.cover .eyebrow { font-size: 2.6cqw; max-width: 66%; line-height: 1.5; }
+.txt.cover .ttl { font-size: 8.4cqw; line-height: 1.25; }
 .txt.back { inset: 14% 10% 12%; gap: 3cqw; }
 .eyebrow { font-family: var(--font-head); font-weight: 500; font-size: 3.2cqw; letter-spacing: 0.04em; color: var(--glow); }
 .ttl { font-family: var(--font-head); font-weight: 800; font-size: 9cqw; line-height: 1.35; text-shadow: 0 0.4cqw 1.6cqw rgba(0, 0, 0, 0.35); text-wrap: balance; }
@@ -672,11 +675,12 @@ button:disabled { opacity: 0.4; cursor: default; }
     if (p.t === 'cover') {
       pg.innerHTML = navyArt(true) + '<div class="txt cover"><div class="eyebrow">مقرر TCST418 · تعليم STEAM لمعلمي المرحلة الابتدائية</div>' +
         '<div class="ttl">من الاستقصاء إلى التصميم</div><div class="rule"></div><div class="sub2">الدليل التطبيقي المصوَّر لدرس «استكشاف الكهرباء»</div>' +
+        '<div class="pillrow" style="display:flex;flex-wrap:wrap;justify-content:center;gap:.8cqw;margin:.4cqw 0 0;flex-wrap:nowrap"><span style="padding:.5cqw 1.5cqw;border:1px solid rgba(255,214,102,.75);border-radius:99px;color:#ffe9a8;font-size:2.15cqw;font-weight:700;white-space:nowrap">استقصاءان</span><span style="padding:.5cqw 1.5cqw;border:1px solid rgba(255,214,102,.75);border-radius:99px;color:#ffe9a8;font-size:2.15cqw;font-weight:700;white-space:nowrap">ثلاثة تصاميم بالتفكير التصميمي</span><span style="padding:.5cqw 1.5cqw;border:1px solid rgba(255,214,102,.75);border-radius:99px;color:#ffe9a8;font-size:2.15cqw;font-weight:700;white-space:nowrap">الربط عبر التخصصات</span></div>' +
         '<div class="small">العلوم · الصف الثاني الابتدائي · الجزء الثاني · الوحدة السادسة: القوى والطاقة</div></div>';
     } else if (p.t === 'back') {
       pg.innerHTML = navyArt(false) + '<div class="txt back"><div class="ttl" style="font-size:7cqw">من الاستقصاء إلى التصميم</div><div class="rule"></div>' +
-        '<div class="flow"><span>سؤال</span><i>↓</i><span>استقصاء</span><i>↓</i><span>استنتاج</span><i>↓</i><span>تصميم</span><i>↓</i><span class="hot">نموذج يعمل</span></div>' +
-        '<div class="small">استقصاءان يقودان إلى ثلاثة تصاميم بالتفكير التصميمي</div></div>';
+        '<div class="flow"><span>سؤال</span><i>↓</i><span>استقصاء</span><i>↓</i><span>استنتاج</span><i>↓</i><span>تصميم</span><i>↓</i><span class="hot">نموذج يعمل</span><i>↓</i><span>ربط بالمواد</span></div>' +
+        '<div class="small">استقصاءان يقودان إلى ثلاثة تصاميم بالتفكير التصميمي، تتكامل فيها المواد الأخرى</div></div>';
     } else {
       pg.innerHTML = p.html;
     }
